@@ -1,5 +1,4 @@
 # A web-based fitness tracker
- # YOUR PROJECT TITLE
 #### Video Demo:  https://www.youtube.com/watch?v=df0q8MSS_Oo
 #### Description:
 This is a web-based fitness tracker where users can register, record their gym exercises and then access the information. Users can add the exercise name, weight used, and the number of sets and repititions. This information is displayed back to the user and can be searched.
