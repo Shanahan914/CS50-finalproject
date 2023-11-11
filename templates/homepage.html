@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}homepage{% endblock %}
+
+{% block main %}
+<h2>Homepage </h2>
+<br>
+<h3> All of your recorded sessions</h3>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date of exerice</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+
+                {% for history in history %}
+                    <tr>
+                        <td>{{ history[1] }}</td>
+                    </tr>
+
+                {% endfor %}
+        </tbody>
+    </table>
+    <br>
+{% endblock %}

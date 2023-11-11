@@ -1,0 +1,27 @@
+user
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE log (
+    id INTEGER PRIMARY KEY,
+    date DATETIME NOT NULL,
+    userid INTEGER NOT NULL,
+    FOREIGN KEY (userid) REFERENCES users(id)
+);
+
+CREATE TABLE exercises (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    reps INTEGER NOT NULL,
+    sets INTEGER NOT NULL,
+    weight INTEGER NOT NULL,
+    logid INTEGER NOT NULL,
+    userid INTEGER NOT NULL,
+    FOREIGN KEY (logid) REFERENCES log(id),
+    FOREIGN KEY (userid) REFERENCES users(id)
+);

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <!--get bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <link href="/static/style.css" rel="stylesheet">    
+
+        <title>Fitness tracker: {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <!-- top navbar-->
+        <nav class="navbar navbar-expand-xl" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+              <img src="/static/graphic (2).svg" alt="Girl in a jacket" width="100">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="nav-link active" aria-current="page" href="#">FITNESS TRACKER</a>
+              <div class="collapse navbar-collapse" id="navbarText">
+                {% if session["user_id"] %}
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/add">Add exercise</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav ms-auto mt-2">
+                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                  </ul>
+                  {% else %}
+                  <ul class="navbar-nav ms-auto mt-2">
+                      <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                    </ul>
+                    {% endif %}
+                <span class="navbar-text">
+                </span>
+              </div>
+            </div>
+          </nav>
+
+          <!-- bottom bar-->
+          <nav class="navbar fixed-bottom navbar-light bg-light">
+            <img src="/static/graphic (2).svg" alt="Girl in a jacket" width="50">
+          </nav>
+
+          <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        </main>
+
+    </body>
+</html>

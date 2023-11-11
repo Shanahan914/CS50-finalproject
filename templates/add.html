@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Add exercise{% endblock %}
+
+{% block main %}
+<form class="form" action="/add" method="post">
+    <h1 class="h3 mb-3 font-weight-normal">Add your exercise below</h1>
+    <label for="name class="sr-only">Name of exercise</label>
+    <input type="text" name="name"  class="form-control" placeholder="Name of exercise" required autofocus>
+    <label for="name class="sr-only">Weight</label>
+    <input type="text" name="weight"  class="form-control" placeholder="Weight" required autofocus>
+    <label for="sets" class="sr-only">Number of sets</label>
+    <input type="number"  name ="sets" class="form-control" placeholder="Sets done" required>
+    <label for="reps" class="sr-only">Number of reps</label>
+    <input type="number"  name ="reps" class="form-control" placeholder="Reps done per set" required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Add exercise</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+  </form>
+
+{% endblock %}
